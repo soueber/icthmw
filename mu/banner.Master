@@ -1,0 +1,73 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="banner.master.cs" Inherits="Icthmw.mu.banner" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>索贝尔教育-以科技助力教育</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+		<!--地址栏和标签上显示图标-->
+		<!--bootstrap引用-->
+		<link rel="stylesheet" href="/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="/css/style-home.css" />
+		<script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+		<script>document.oncontextmenu=function(){return false;}</script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="background: white;">
+			<div class="header">
+
+				<img src="/img/cylogo.png" />
+				<div class="logo-title">
+					<!--标题-->
+                    <div class="zhuti">
+                        <select style="width:240px;border:none;background-color:transparent">
+                            <optgroup label="人教/中图版(2019)">
+                                <option value="">必修1 数据与计算</option>
+                                <option value="">必修2 信息系统与社会</option>
+                            </optgroup>
+  		<optgroup label="少儿编程">
+                                <option value="">Scratch</option>
+                                <option value="">Blockly</option>
+                            </optgroup>
+                        </select>
+                    </div>
+					<div class="small-zhuti">课程服务平台</div>
+				</div>
+				<!--导航栏-->
+				<asp:ContentPlaceHolder ID="ContentPlaceHolder_daohang" runat="server">
+            </asp:ContentPlaceHolder>
+				<!--导航栏结束-->
+				<!--登录模块-->
+				<div class="denglu">
+                    <div id="login_state_user" runat="server">
+					<img src="/img/avatar3.png"  style="float:left;width:30px;height: 30px; border-radius:10px" runat="server" id="userimg" />
+					<div class="denglu-username" style="float: left;"><a class="dengluna" href="javascrtpt:void(0);" style="text-decoration:none">&emsp;<asp:Label runat="server" ID="username"></asp:Label></a></div>
+                    </div>
+                    <div id="login_state_btn" runat="server">
+					<button type="button" class="btn btn-info" onclick="javascrtpt:window.location.href='login.aspx'">学生登录</button>
+					<button type="button" class="btn btn-info" onclick="javascrtpt:void(0);alert('系统维护中');">后台管理</button>
+				    </div>
+                    </div>
+			</div>
+		</nav>
+    <form id="form1" runat="server">
+        <div style="width:100%;min-width: 1100px">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    	<div class="footer">
+                <center>
+                    技术运营支持：教育科学与技术学院 | 联系我们：soueber@163.com
+                    <br />
+                    Copyright © 2020.Company Soueber All rights reserved.
+                </center>			
+			</div>
+</body>
+</html>
